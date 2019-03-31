@@ -1,0 +1,16 @@
+{% extends "basic_app/base.html" %}
+{% load staticfiles %}
+{% block bodyblock %}
+<div class="jumbotron">
+  {% if user.is_authenticated %}
+  <h1>Hello, {{ user.username }} Welcome to Our Page</h1>
+  <h1> Email Id, {{ user.email }}</h1>
+
+  <h3>Profile Image</h3><img src="{{ user.userprofileinfo.profile_pic.url }}" alt="image">
+
+  {% else %}
+  <h1>Welcome To Our Page</h1>
+
+  {% endif %}
+</div>
+{% endblock %}
